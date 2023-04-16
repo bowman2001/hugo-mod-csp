@@ -1,16 +1,22 @@
 module:
   noProxy: none
-  noVendor: ""
+  noVendor:
   private: '*.*'
   proxy: direct
-  replacements: ""
   workspace: "off"
   hugoVersion:
     extended: false
 
 csp:
-  keys: ['none', 'self', 'strict-dynamic', 'report-sample', 'unsafe-inline', 'unsafe-hashes']
+  keys: [default-src, script-src, style-src, object-src, base-uri, connect-src, font-src, frame-src, img-src, manifest-src, media-src, report-uri, worker-src]
+  values: ['none', 'self', 'strict-dynamic', 'report-sample', 'unsafe-inline', 'unsafe-hashes']
   experimental:
     allow: false
     keys: []
   report-only: false
+
+outputFormats.HEADERS:
+  mediaType: "text/netlify"
+  basename: "_headers"
+  isPlainText: true
+  notAlternative: true
