@@ -7,16 +7,24 @@ module:
   hugoVersion:
     extended: false
 
-csp:
-  keys: [default-src, script-src, style-src, object-src, base-uri, connect-src, font-src, frame-src, img-src, manifest-src, media-src, report-uri, worker-src]
-  values: ['none', 'self', 'strict-dynamic', 'report-sample', 'unsafe-inline', 'unsafe-hashes']
-  experimental:
-    allow: false
-    keys: []
-  report-only: false
+mediaTypes:
+  text/netlify:
+    suffixes: [""]
+    delimiter: ""
 
-outputFormats.HEADERS:
-  mediaType: "text/netlify"
-  basename: "_headers"
-  isPlainText: true
-  notAlternative: true
+outputFormats:
+  HEADER:
+    mediaType: "text/netlify"
+    basename: "_headers"
+    isPlainText: true
+    notAlternative: true
+
+Params:
+  cspConfig:
+    keysSrc: ["default", "script", "style", "object", "connect", "font", "frame", "img", "manifest", "media", "worker"]
+    keysUri: [base, report]
+    values: ['none', 'self', 'strict-dynamic', 'report-sample', 'unsafe-inline', 'unsafe-hashes']
+    experimental:
+      allow: false
+      keys: []
+    reportOnly: false
