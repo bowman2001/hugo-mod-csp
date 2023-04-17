@@ -30,13 +30,12 @@
                     {{- with urls.Parse . }}
                         {{- $vals = printf "%s %s" $vals . }}
                     {{- else }}
-                        {{- warnf "Unable to use CSP value. %s is not a valid value." . }}
+                        {{- warnf "Unable to use CSP value. %s is not a valid value or URL." . }}
                     {{- end }}
                 {{- end }}
             {{- end }}
             {{- $csp = printf "%s%s%s; " $csp $key $vals  }}
         {{- end }}
         {{- htmlUnescape $csp | safeHTML }}
-        {{- warnf "%s" $csp }}
     {{- end }}
 {{- end }}

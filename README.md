@@ -1,6 +1,6 @@
-# Hugo module to generate the header with the content security policy
+# Hugo module to generate a server header
 
-The module is in beta stage and can only generate the file `_header` for Netlify including a site wide CSP.
+The module is in beta stage and can only generate the file `_header` for Netlify including a site wide CSP and other security settings.
 
 ## Syntax source & check
 
@@ -18,11 +18,11 @@ There are different ways to accomplish this task and this module could be able t
 
 ### Validation
 
-A content security policy doesn’t necessarily need a hugo module. We may well write one without it. But the syntax is complicated enough to expect typing errors and other mistakes, which could undermine the intended security. This module checks the syntax of all entries to prevent a faulty header.
+A content security policy doesn’t necessarily need a hugo module. We may well write one without it. But the syntax is complicated enough to expect typing errors and other mistakes, which could undermine our results. This module checks the syntax of all entries to prevent a faulty header.
 
-- The syntax of all keys and values gets checked. (nonce-* and sha-* are still missing)
+- The syntax of all keys and special values gets checked against the official syntax elements.  (nonce-* and sha-* are still missing)
 
-- URLs must be parseable.
+- URLs and pure schemes get parsed by Hugo’s urls.Parse, which is based on the standard Golang method.
 
 ## Prerequisites
 
