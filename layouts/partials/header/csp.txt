@@ -1,4 +1,4 @@
-{{- with site.Params.xHeadersConfig}}
+{{- with site.Params.xHeadersConfig }}
     {{- $keySrc := .keysSrc }}
     {{- $foValues := .foValues }}
     {{- with site.Params.xHeaders }}
@@ -59,8 +59,8 @@
         {{- end }}
         {{- htmlUnescape $csp | safeHTML }}
     {{- else }}
-        {{ warnf "The module 'hugo-mod-csp' is present, but not configured for this site. Please follow the README of the module to provide a CSP for your site." }}
+        {{ warnf "The module 'hugo-mod-csp' is present, but not configured for this project. Please follow the README of the module to provide a CSP for your site." }}
     {{- end }}
     {{- else }}
-    {{ errorf "The module 'hugo-mod-csp' is present, but its own configuration can’t be processed. Please disable the module for now and file an issue in the modules repository." }}
+    {{ errorf "The module 'hugo-mod-csp' is present, but its own configuration can’t be processed. Please disable the module for now and file an issue in its repository." }}
 {{- end }}
