@@ -4,21 +4,22 @@
     {{- with site.Params.xHeaders }}
         {{- with .FrameOptions }}
             {{- if in $foValues . }}
-                {{ print "X-Frame-Options: " . }}
+                {{- print "X-Frame-Options: " . }}
             {{- end }}
         {{- end }}
         {{- with .ContentTypeOptions }}
             {{- if . }}
-                {{ print "X-Content-Type-Options: " site.Params.xHeadersConfig.ctpDefault }}
+                {{- print "X-Content-Type-Options: " site.Params.xHeadersConfig.ctpDefault }}
             {{- end }}
         {{- end }}
         {{- with .XSSProtection }}
             {{- if . }}
-                {{ print "X-XSS-Protection: " site.Params.xHeadersConfig.xssDefault }}
+                {{- print "X-XSS-Protection: " site.Params.xHeadersConfig.xssDefault }}
             {{- end }}
         {{- end }}
     {{- end }}
 {{- end }}
+
 {{- with site.Params.cspConfig }}
     {{- $keysSrc := .keysSrc }}
     {{- $keysUri := .keysUri }}
