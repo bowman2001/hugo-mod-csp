@@ -2,6 +2,8 @@
 
 The module is in beta stage and can only generate the file `_header` for Netlify including a site wide CSP and other security settings.
 
+A content security policy doesn’t necessarily need a hugo module. We may well write one without it. But the syntax is complicated enough to expect typing errors and other mistakes which could undermine the result and the intended security. This module checks the syntax of all entries to prevent a faulty header.
+
 ## Syntax source & check
 
 - The syntax for a content security policy (CSP) [is documented here][csp] for example.
@@ -17,8 +19,6 @@ CSP is a second line of defense against attacks. The task is always the same: Ad
 There are different ways to accomplish this task and this module could be able to generate different formats.
 
 ### Validation
-
-A content security policy doesn’t necessarily need a hugo module. We may well write one without it. But the syntax is complicated enough to expect typing errors and other mistakes, which could undermine our results. This module checks the syntax of all entries to prevent a faulty header.
 
 - The syntax of all keys and special values gets checked against the official syntax elements.  (nonce-* and sha-* are still missing)
 
