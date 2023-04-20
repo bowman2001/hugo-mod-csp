@@ -1,6 +1,6 @@
 # Hugo module to generate a server header
 
-The module is in beta stage and can only generate the file `_header` for Netlify including a site wide CSP and other security settings.
+The module is in alpha stage and can only generate the file `_header` for Netlify including a site wide CSP and other security settings.
 
 A content security policy doesn’t necessarily need a hugo module. We may well write one without it. But the syntax is complicated enough to expect typing errors and other mistakes which could undermine the result and the intended security. This module checks the syntax of all entries to prevent a faulty header.
 
@@ -35,3 +35,5 @@ This module expects a CSP section in the Hugo project parameters.
 - The second implementation should be a meta tag for the HTML header. This is less efficient, because we need additional HTML code. And a few rules don’t have any effect as meta tags. Meta tags have only one advantage: They work on all servers without access to the configuration of the web server.  
 
 [csp]: https://developer.mozilla.org/en-US/docs/Web/HTTP/CSP "MDN"
+
+## Configuration syntax (TODO)
