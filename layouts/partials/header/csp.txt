@@ -5,17 +5,17 @@
         {{- with .FrameOptions }}
             {{- if in $foValues . }}
                 {{- print "X-Frame-Options: " . }}
-            {{- end }}
+            {{ end }}
         {{- end }}
         {{- with .ContentTypeOptions }}
             {{- if . }}
                 {{- print "X-Content-Type-Options: " site.Params.xHeadersConfig.ctpDefault }}
-            {{- end }}
+            {{ end }}
         {{- end }}
         {{- with .XSSProtection }}
             {{- if . }}
                 {{- print "X-XSS-Protection: " site.Params.xHeadersConfig.xssDefault }}
-            {{- end }}
+            {{ end }}
         {{- end }}
     {{- end }}
 {{- end }}
