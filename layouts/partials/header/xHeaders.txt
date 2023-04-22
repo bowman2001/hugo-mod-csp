@@ -9,7 +9,7 @@
         {{- end }}
         {{- with .ContentTypeOptions }}
             {{- if . }}
-                {{ printf "%s %s\n" "X-Content-Type-Options:" site.Params.xHeadersConfig.ctpDefault }}
+                {{- printf "%s %s\n" "X-Content-Type-Options:" site.Params.xHeadersConfig.ctpDefault -}}
             {{- end }}
         {{- end }}
         {{- with .XSSProtection }}
