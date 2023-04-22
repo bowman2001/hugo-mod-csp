@@ -4,18 +4,18 @@
     {{- with site.Params.xHeaders }}
         {{- with .FrameOptions }}
             {{- if in $foValues . }}
-                {{- printf "%s $s" "X-Frame-Options:" . }}
-            {{ end }}
+                {{- printf "%s %s" "X-Frame-Options:" . }}
+            {{- end }}
         {{- end }}
         {{- with .ContentTypeOptions }}
             {{- if . }}
-                {{- printf "%s %s" "X-Content-Type-Options:" site.Params.xHeadersConfig.ctpDefault }}
-            {{ end }}
+                {{ printf "%s %s" "X-Content-Type-Options:" site.Params.xHeadersConfig.ctpDefault }}
+            {{- end }}
         {{- end }}
         {{- with .XSSProtection }}
             {{- if . }}
                 {{- printf "%s %s" "X-XSS-Protection:" site.Params.xHeadersConfig.xssDefault }}
-            {{ end }}
+            {{- end }}
         {{- end }}
     {{- end }}
 {{- end -}}
