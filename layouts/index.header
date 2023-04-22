@@ -1,5 +1,3 @@
-/*
-
-{{- partial "header/xHeaders.txt" . -}}
-
-{{- partial "header/csp.txt" . -}}
+{{ printf "%s" "/*" }}
+{{- partial "header/xHeaders.txt" . }}
+{{- partial "header/csp.txt" . }}
