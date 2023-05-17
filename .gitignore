@@ -1,8 +1,8 @@
 ### Hugo template
 # Generated files by hugo
-/public/
-/resources/_gen/
-/assets/jsconfig.json
+public
+resources
+.hugo_build.lock
 
 # Editor configuration
 /.idea

@@ -1,4 +1,4 @@
-{{- with site.Params.cspConfig }}
+{{- with site.Data.hugoModCSP.csp }}
     {{- $keysSrc := .keysSrc }}
     {{- $keysUri := .keysUri }}
     {{- $values := .values }}

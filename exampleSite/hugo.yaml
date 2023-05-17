@@ -1,0 +1,57 @@
+baseURL: 'https://example.org/'
+languageCode: = en-us
+title: hugo-mod-csp
+
+outputs:
+  home: [HTML, RSS, HEADER]
+
+params:
+# X-Headers
+  xHeaders:
+    FrameOptions: deny
+    ContentTypeOptions: true
+    XSSProtection: false
+
+# Content-Security-Policy
+  cspConfig:
+    reportOnly: false
+
+  csp:
+    default:
+      - "https:"
+      - 'self'
+      - '*.desider.at'
+    script:
+      - 'report-sample'
+      - 'self'
+    style:
+      - 'report-sample'
+      - 'self'
+      - 'unsafe-inline'
+      - 'https://cdn.jsdelivr.net/npm/'
+    object: 'none'
+    base: 'self'
+    connect: 'self'
+    font:
+      - 'self'
+      - 'data:'
+      - 'https://cdn.jsdelivr.net/npm/'
+    frame: 'self'
+    img:
+      - 'self'
+      - 'data:'
+      - 'https://cdn.usefathom.com/'
+    manifest: 'self'
+    media: 'self'
+    worker: 'none'
+
+
+
+module:
+  imports:
+    - path: github.com/bowman2001/hugo-mod-csp
+      mounts:
+        - source: layouts
+          target: layouts
+        - source: data
+          target: data
